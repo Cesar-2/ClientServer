@@ -21,7 +21,7 @@ class CardAPI(APIView):
     def get(self, request):
         task_completed = 0
         task_active = 0
-        tasks = Task.objects.all()
+        tasks = Task.objects.all().exclude(is_active=False)
         for task in tasks:
             if task.is_completed:
                 task_completed += 1
