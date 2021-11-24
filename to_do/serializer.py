@@ -17,7 +17,7 @@ class CardSerializer(serializers.ModelSerializer):
         fields = ['user']
 
     def get_user(self, obj):
-        return User.objects.filter(name=obj.name)
+        return User.objects.filter(id=obj.id)
 
 
 class TaskSerializer(serializers.ModelSerializer):
